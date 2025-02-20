@@ -1,0 +1,215 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #202020;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.citation-form {
+    background-color: #2d2d2d;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #404040;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #404040;
+    border-radius: 6px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+}
+
+input:hover {
+    background-color: #252525;
+}
+
+button {
+    background-color: #0078d4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: #2b88d8;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+button:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(100, 100);
+        opacity: 0;
+    }
+}
+
+#bibliography-container {
+    position: relative;
+}
+
+#bibliography-output {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border: 1px solid #404040;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#copy-bibliography {
+    background-color: #0078d4;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+#copy-bibliography:disabled {
+    background-color: #1f1f1f;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.citation-form h2 {
+    margin-top: 0;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.url-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.url-input-group input {
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+.auto-fill-btn {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.note {
+    color: #999;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+
+/* Style for disabled button state */
+button:disabled {
+    background-color: #1f1f1f;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f1f1f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Date input styling */
+input[type="date"] {
+    color-scheme: dark;
+}
+
+/* Placeholder text color */
+::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+.citation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.citation-header h2 {
+    margin: 0;
+}
+
+.delete-citation {
+    background-color: #d83b01;
+    padding: 6px 12px;
+    margin: 0;
+}
+
+.delete-citation:hover {
+    background-color: #ea4a1f;
+} 

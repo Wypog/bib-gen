@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliography Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bibliography Generator</h1>
+        <p class="note">Note: This generator currently supports single author citations only. For articles with multiple authors, please add them to the citation manually.</p>
+        <div id="forms-container">
+            <div class="citation-form">
+                <div class="citation-header">
+                    <h2>Citation #1</h2>
+                    <button class="delete-citation" onclick="deleteCitation(this)">Delete</button>
+                </div>
+                <div class="url-input-group">
+                    <input type="url" placeholder="Enter URL to auto-fill" class="url-autofill">
+                    <button class="auto-fill-btn">Auto-fill</button>
+                </div>
+                <input type="text" placeholder="Author's Last Name" class="author-last">
+                <input type="text" placeholder="Author's First Name" class="author-first">
+                <input type="text" placeholder="Article Title" class="article-title">
+                <input type="text" placeholder="Website Name" class="website-name">
+                <input type="text" placeholder="Publisher" class="publisher">
+                <input type="date" class="pub-date">
+                <input type="url" placeholder="URL" class="url">
+                <input type="date" class="access-date">
+            </div>
+        </div>
+        <button id="add-citation">Add Another Citation</button>
+        <button id="generate">Generate Bibliography</button>
+        <div id="bibliography-output"></div>
+        <button id="copy-bibliography" style="display: none;">Copy Bibliography</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
