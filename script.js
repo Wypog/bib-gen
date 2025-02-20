@@ -4,10 +4,15 @@ let citationCount = 1;
 attachAutoFillListener(document.getElementsByClassName('citation-form')[0]);
 
 document.getElementById('add-citation').addEventListener('click', () => {
-    citationCount++;
+    // Get the actual number of existing citations and add 1
+    citationCount = document.getElementsByClassName('citation-form').length + 1;
+    
     const formTemplate = `
         <div class="citation-form">
-            <h2>Citation #${citationCount}</h2>
+            <div class="citation-header">
+                <h2>Citation #${citationCount}</h2>
+                <button class="delete-citation" onclick="deleteCitation(this)">Delete</button>
+            </div>
             <div class="url-input-group">
                 <input type="url" placeholder="Enter URL to auto-fill" class="url-autofill">
                 <button class="auto-fill-btn">Auto-fill</button>
@@ -97,6 +102,17 @@ function attachAutoFillListener(formElement) {
             autoFillBtn.disabled = false;
             autoFillBtn.textContent = originalBtnText;
         }
+    });
+}
+
+function deleteCitation(button) {
+    const citationForm = button.closest('.citation-form');
+    citationForm.remove();
+    
+    // Update the citation numbers for all remaining forms
+    const forms = document.getElementsByClassName('citation-form');
+    Array.from(forms).forEach((form, index) => {
+        form.querySelector('h2').textContent = `Citation #${index + 1}`;
     });
 }
 
